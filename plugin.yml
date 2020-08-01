@@ -1,0 +1,33 @@
+name: JobUI
+version: 1.7.0
+api: 3.9.0
+main: hamid0740\jobui\JobUI
+author:
+  - onebone
+  - hamid0740
+softdepend: 
+  - FormAPI
+
+commands:
+  job:
+    description: Job UI command (Added UI by hamid0740)
+    usage: /job
+    permission: jobui.command.job
+  retire:
+    description: Retire command (To join a job use /job)
+    usage: /retire
+    permission: jobui.command.retire
+
+permissions:
+  jobui.command.job:
+    description: Allows player to use /job
+    default: op
+  jobui.command.retire:
+    description: Allows player to use /retire
+    default: true
+  jobui.earn.break:
+    description: Allows player to earn money by a breaking job(Best choice for only one world earning)
+    default: op
+  jobui.earn.place:
+    description: Allows player to earn money by a placing job(Best choice for only one world earning)
+    default: op
