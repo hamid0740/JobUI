@@ -1,0 +1,25 @@
+---
+Tree-Cutter:
+  17:0:break: 25
+  17:1:break: 25
+  17:2:break: 25
+  17:3:break: 25
+  17:4:break: 25
+  17:5:break: 25
+  17:6:break: 25
+  17:7:break: 25
+  17:8:break: 25
+  17:9:break: 25
+  17:10:break: 25
+  17:11:break: 25
+  162:0:break: 25
+  162:1:break: 25
+  162:4:break: 25
+  162:5:break: 25
+  162:8:break: 25
+  162:9:break: 25
+Miner:
+  1:0:break: 25
+  16:0:break: 30
+  15:0:break: 35
+...
