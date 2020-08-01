@@ -2,6 +2,8 @@
 * __This plugin is not Customizable currently; even I don't have a plan to make it Customizable. But if I see that you like this plugin and really need it, I will *absolutely* make it Customizable__
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money in a specified world, but before you need to install the PurePerms plugin.
+## Download
+[Download JobUI plugin v1.7](https://github.com/hamid0740/JobUI/releases/download/1.7/JobUI.phar)
 ### Preview
 ![Preview](https://www.mediafire.com/convkey/7ca9/muxd8cv9quuoo6vzg.jpg)
 ### Dependencies:
