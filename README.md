@@ -1,5 +1,5 @@
 # JobUI
-* For some reasons I changed the permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
+* I changed the permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money in a specified world, but before you need to install the PurePerms plugin.
 ### Dependencies:
 * [FormAPI by jojoe77777](https://github.com/jojoe77777/FormAPI) (Necessary)
