@@ -1,2 +1,2 @@
 # JobUI
-This is an advanced version of EconomyJob including an UI
+This is an advanced version of EconomyJob including a UI
