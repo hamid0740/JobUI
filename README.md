@@ -9,8 +9,24 @@
 * __*Before completing the next steps, make sure that `enable-multiworld-perms` has been set to `true` in `plugin_data\PurePerms\config.yml`.*__
 * Open this file path `plugin_data\PurePerms\groups.yml`. Then the only thing that you should do is to add the world and permissions to the Group you want. I will give an example below:
 ```yaml
-
+---
+Guest:
+  alias: gst
+  isDefault: true
+  inheritance: []
+  permissions:
+  - jobui.command.retire
+  worlds:
+    Mine:
+      isDefault: false
+      permissions:
+      - jobui.command.job
+      - jobui.earn.break
+      - jobui.earn.place
+...
 ```
+* If a player is in the Guest group, he won't be able to use /job command in every world except the "Mine"
+* Also, he won't be able to earn money by having a job in every world except the "Mine"
 ### Permissions and Commands:
 Permission | Command | Default | About
 ---------- | ------- | ------- | -----
