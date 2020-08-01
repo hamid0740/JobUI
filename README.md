@@ -2,8 +2,9 @@
 * I changed the permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money in a specified world, but before you need to install the PurePerms plugin.
 ### Dependencies:
-* [FormAPI by jojoe77777](https://github.com/jojoe77777/FormAPI) __(Necessary)__
-* [PurePerms by 64FF00](https://github.com/poggit-orphanage/PurePerms) (Optional)
+* [FormAPI by jojoe77777]() [[Download]]() [[GitHub]](https://github.com/jojoe77777/FormAPI) __(Necessary)__
+* [EconomyAPI by onebone](https://poggit.pmmp.io/p/EconomyAPI/) [[Download]]() [[GitHub]](https://github.com/poggit-orphanage/EconomyS/) __(Necessary)__
+* [PurePerms by 64FF00]() [[Download]]() [[GitHub]](https://github.com/poggit-orphanage/PurePerms) (Optional)
 ### How to let players use /job command and earn money in a specified world?
 * As I said you need to install the PurePerms plugin.
 * __*Before completing the next steps, make sure that `enable-multiworld-perms` has been set to `true` in `plugin_data\PurePerms\config.yml`.*__
