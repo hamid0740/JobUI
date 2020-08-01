@@ -2,6 +2,8 @@
 * __This plugin is not Customizable currently; even I don't have a plan to make it Customizable. But if I see that you like this plugin and really need it, I will *absolutely* make it Customizable__
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money in a specified world, but before you need to install the PurePerms plugin.
+### Preview
+[Preview](https://www.mediafire.com/convkey/7ca9/muxd8cv9quuoo6vzg.jpg)
 ### Dependencies:
 * [FormAPI by jojoe77777](https://poggit.pmmp.io/p/FormAPI/) [[Download]](https://poggit.pmmp.io/r/41263/FormAPI.phar) [[GitHub]](https://github.com/jojoe77777/FormAPI) __(Necessary)__
 * [EconomyAPI by onebone](https://poggit.pmmp.io/p/EconomyAPI/) [[Download]](https://poggit.pmmp.io/r/34531/EconomyAPI.phar) [[GitHub]](https://github.com/poggit-orphanage/EconomyS/) __(Necessary)__
