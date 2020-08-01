@@ -4,6 +4,9 @@
 * You will learn how to let players use /job command and earn money in a specified world, but before you need to install the PurePerms plugin.
 ## Download
 [Download JobUI plugin v1.7](https://github.com/hamid0740/JobUI/releases/download/1.7/JobUI-1.7.phar)
+### Default Jobs
+* Tree-Cutter: By joining this job, when you break any kind of logs with any directions you will earn 25$.
+* Miner: By joining this job, when you break Stone 25$, Coal ore 30$ and Iron ore 35$
 ### Preview
 ![Preview](https://www.mediafire.com/convkey/7ca9/muxd8cv9quuoo6vzg.jpg)
 ### Dependencies:
