@@ -1,5 +1,5 @@
 # JobUI
-* __This plugin is not Customizable currently; even I don't have a plan to make it Customizable. But if I see that you like this plugin and really need it, I will *absolutely* make it Customizable__
+* __This plugin is not Customizable currently. you can check the To-Do list. This plugin will be Customizable very soon.__
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money in a specified world, but before you need to install the PurePerms plugin.
 ### Download
@@ -35,7 +35,10 @@ Guest:
 ...
 ```
 * If a player is in the Guest group, he won't be able to use /job command in every world except the "Mine"
-* Also, he won't be able to earn money by having a job in every world except the "Mine"
+* Also, he won't be able to earn money by having a job in every world except the "Mine" but he can use /retire in every world.
+### To-Do list
+[] Adding Customizable feature for texts of the UI and every messages
+[] Adding Customizable feature for jobs, so that you will be able to add more jobs
 ### Permissions and Commands:
 Permission | Command | Default | About
 ---------- | ------- | ------- | -----
