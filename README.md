@@ -18,4 +18,4 @@ jobui.command.job | /job | op | Able to see the UI of the Jobs
 jobui.command.retire | /retire | true | Able to be retired 
 jobui.earn.break | - | op | Able to earn money of a breaking Job
 jobui.earn.place | - | op | Able to earn money of a placing Job
-* As you see there is an independent /retire command. Although there is an ability to get retired through the Form, I've added /retire command to let players get retired when they don't have permission to use /job.
+* As you see, there is an independent /retire command. Although there is a button to get retired through the Form, I've added /retire command to let players get retired when they don't have permission to use /job.
