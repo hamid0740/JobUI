@@ -1,5 +1,6 @@
 # JobUI
-* __This plugin is not Customizable currently. you can check the To-Do list.__
+* __Customizable and Infinite Jobs are supported noe. you can change or add jobs in `plugin_data\JobUI\plugin.yml`.__
+* __Customizable message will be added soon.__
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money in a specified world, but before you need to install the PurePerms plugin.
 ### Default Jobs
@@ -35,8 +36,9 @@ Guest:
 ### Image
 ![Preview](https://www.mediafire.com/convkey/7ca9/muxd8cv9quuoo6vzg.jpg)
 ### To-Do list
-* [ ] Adding Customizable feature for texts of the UI and every messages
-* [ ] Adding Customizable feature for jobs, so that you will be able to add more jobs
+* [X] Adding Customizable feature for jobs, so that you will be able to add more jobs
+* [ ] Adding Customizable feature for texts of the UI and every messages (in 3 days or less)
+* [ ] Using the FormAPI library instead of FormAPI plugin (not in 3 days)
 ### Permissions and Commands:
 Permission | Command | Default | About
 ---------- | ------- | ------- | -----
