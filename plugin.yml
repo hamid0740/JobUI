@@ -1,12 +1,12 @@
 name: JobUI
-version: 1.7.0
+version: 1.8.0
 api: 3.9.0
 main: hamid0740\jobui\JobUI
 author:
-  - onebone
   - hamid0740
 softdepend: 
   - FormAPI
+  - EconomyAPI
 
 commands:
   job:
