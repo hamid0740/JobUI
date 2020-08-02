@@ -1,5 +1,5 @@
 # JobUI
-* __Customizable and Infinite Jobs are supported noe. you can change or add jobs in `plugin_data\JobUI\plugin.yml`.__
+* __Customizable and Infinite Jobs are supported now. you can change or add jobs in `plugin_data\JobUI\plugin.yml`.__
 * __Customizable message will be added soon.__
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money in a specified world, but before you need to install the PurePerms plugin.
