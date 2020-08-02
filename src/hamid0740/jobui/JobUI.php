@@ -36,13 +36,6 @@ class JobUI extends PluginBase implements Listener{
 	/** @var EconomyJobUI   */
 	private static $instance;
 	
-	
-	
-	public function registerSubcommands(){
-		$this->subcommands["retire"] = new RetireSubcommand;
-		$this->subcommands["ui"] = new UiSubcommand;
-	}
-
 	public function onEnable(){
 		@mkdir($this->getDataFolder());
 		if(!is_file($this->getDataFolder()."jobs.yml")){
@@ -90,12 +83,12 @@ class JobUI extends PluginBase implements Listener{
 				if ($player->hasPermission("jobui.earn.break")) {
 					if($money > 0){
 						$this->api->addMoney($player, $money);
-						$player->sendPopup("§b+ Money for Job");
+						$player->sendPopup("§b+ " . $money . "$ for Job!");
 					}else{
 						$this->api->reduceMoney($player, $money);
 					}
 				}else{
-					$player->sendPopup("§cYou can't earn money by a Job, use /retire to be retired");
+					$player->sendPopup("§cYou don't have permission to earn money by this Job\nuse /retire to be retired");
 				}
 			}
 		}
@@ -117,12 +110,12 @@ class JobUI extends PluginBase implements Listener{
 				if ($player->hasPermission("jobui.earn.place")) {
 					if($money > 0){
 						$this->api->addMoney($player, $money);
-						$player->sendPopup("§b+ Money for Job");
+						$player->sendPopup("§b+ " . $money . "$ for Job!");
 					}else{
 						$this->api->reduceMoney($player, $money);
 					}
 				}else{
-					$player->sendPopup("§cYou can't earn money by a Job, use /retire to be retired");
+					$player->sendPopup("§cYou don't have permission to earn money by this Job\nuse /retire to be retired");
 				}
 			}
 		}
@@ -177,7 +170,7 @@ class JobUI extends PluginBase implements Listener{
 						$sender->sendMessage("§7[§6Jobs§7] §cYou have retired from the job§e \"$job\"");
 						return true;
 					}else{
-						$sender->sendMessage("§7[§6Jobs§7] §cYou don't have a job yet. First join a job then you'll be able to be retired.");
+						$sender->sendMessage("§7[§6Jobs§7] §cYou don't have a job yet. First join a job then you'll get able to be retired.");
 						return true;
 					}
 				}else{
@@ -212,15 +205,15 @@ class JobUI extends PluginBase implements Listener{
 					if($this->player->exists($player->getName())){
 						$job = $this->player->get($player->getName());
 						$this->player->remove($player->getName());
-						$player->sendMessage("§7[§6Jobs§7] §cYou have retired from the job§e \"$job\"");
+						$player->sendMessage("§7[§6Jobs§7] §cYou have retired from the job §e" . $job);
 					}else{
-						$player->sendMessage("§7[§6Jobs§7] §cYou don't have a job yet. First join a job then you'll be able to be retired.");
+						$player->sendMessage("§7[§6Jobs§7] §cYou don't have a job yet. First join a job then you'll be able to get retired.");
 					}
 					break;
 				}
 			});
-			$form->setTitle("§bJob");
-			$form->setContent("§aYour Job: §e".$this->player->get($player->getName()));
+			$form->setTitle("§aJob");
+			$form->setContent("§aYour Job: §e"  . $this->player->get($player->getName()));
 			$form->addButton("§aJoin a Job");
 			$form->addButton("§6Jobs Info");
 			$form->addButton("§dMy Job");
@@ -235,23 +228,27 @@ class JobUI extends PluginBase implements Listener{
 			$result = $data;
 			if($result === null){
 				return true;
-				}
+			}
+			$i = 0;
+			foreach($this->jobs->getAll() as $name => $job){
 				switch($result){
-					case "0";
-					$this->player->set($player->getName(), "Tree-Cutter");
-					$player->sendMessage("§7[§6Jobs§7] §aYou have joined the job §eTree-Cutter");
-					break;
-					
-					case "1";
-					$this->player->set($player->getName(), "Miner");
-					$player->sendMessage("§7[§6Jobs§7] §aYou have joined the job §eMiner");
-					break;
-					
+					case "$i";
+						$this->player->set($player->getName(), "$name");
+						$job = $this->player->get($player->getName());
+						$player->sendMessage("§7[§6Jobs§7] §aYou have joined the job §e" . $job);
+						break;
+					}
+				$i++;
 				}
-			});
+			}
+		);
+			
 			$form->setTitle("§aJobs List");
-			$form->addButton("§aTree Cutter", 1, "https://gamepedia.cursecdn.com/minecraft_gamepedia/c/c5/Oak_Log_Axis_Y_JE5_BE3.png");
-			$form->addButton("§bMiner", 1, "https://gamepedia.cursecdn.com/minecraft_gamepedia/0/0c/Iron_Ore_JE3.png");
+			
+		foreach($this->jobs->getAll() as $name => $job){
+			$form->addButton("§b" . $name);
+		}
+			
 			$form->sendToPlayer($player);
 			return $form;
 	}
