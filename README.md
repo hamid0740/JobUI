@@ -1,14 +1,10 @@
 # JobUI
-* __This plugin is not Customizable currently. you can check the [To-Do list](https://github.com/hamid0740/JobUI/blob/master/README.md#to-do-list). This plugin will be Customizable very soon.__
+* __This plugin is not Customizable currently. you can check the To-Do list.__
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money in a specified world, but before you need to install the PurePerms plugin.
-### Download
-[Download JobUI plugin v1.7](https://github.com/hamid0740/JobUI/releases/download/1.7/JobUI-1.7.phar)
 ### Default Jobs
 * Tree-Cutter: By joining this job, when you break any kind of logs with any directions you will earn 25$.
 * Miner: By joining this job, when you break Stone 25$, Coal ore 30$ and Iron ore 35$
-### Preview
-![Preview](https://www.mediafire.com/convkey/7ca9/muxd8cv9quuoo6vzg.jpg)
 ### Dependencies:
 * [FormAPI by jojoe77777](https://poggit.pmmp.io/p/FormAPI/) [[Download]](https://poggit.pmmp.io/r/41263/FormAPI.phar) [[GitHub]](https://github.com/jojoe77777/FormAPI) __(Necessary)__
 * [EconomyAPI by onebone](https://poggit.pmmp.io/p/EconomyAPI/) [[Download]](https://poggit.pmmp.io/r/34531/EconomyAPI.phar) [[GitHub]](https://github.com/poggit-orphanage/EconomyS/) __(Necessary)__
@@ -36,6 +32,8 @@ Guest:
 ```
 * If a player is in the Guest group, he won't be able to use /job command in every world except the "Mine"
 * Also, he won't be able to earn money by having a job in every world except the "Mine" but he can use /retire in every world.
+### Image
+![Preview](https://www.mediafire.com/convkey/7ca9/muxd8cv9quuoo6vzg.jpg)
 ### To-Do list
 * [ ] Adding Customizable feature for texts of the UI and every messages
 * [ ] Adding Customizable feature for jobs, so that you will be able to add more jobs
