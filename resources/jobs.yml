@@ -1,4 +1,13 @@
 ---
+# Job Types: "break" & "place"
+# Add more jobs in this format:
+# Job-Name: (can contain a-z, A-Z, 0-9 & -)(don't use 0-9 or - at the first of the Job's name)
+#   BlockID:BlockData:JobType: Money
+# e.g.
+# 2:0:break: 10 (By breaking Grass you will earn 10$)
+# 2:0:place: 10 (By placing Grass you will earn 10$)
+#
+# IMPORTANT NOTE: if you don't follow the right format for jobs, your server might crash.
 Tree-Cutter:
   17:0:break: 25
   17:1:break: 25
