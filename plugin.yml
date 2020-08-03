@@ -1,16 +1,15 @@
 name: JobUI
-version: 1.8.0
+version: 1.9.0
 api: 3.9.0
 main: hamid0740\jobui\JobUI
-author:
-  - hamid0740
+author: hamid0740
 softdepend: 
   - FormAPI
   - EconomyAPI
 
 commands:
   job:
-    description: Job UI command (Added UI by hamid0740)
+    description: Job UI command (By hamid0740)
     usage: /job
     permission: jobui.command.job
   retire:
