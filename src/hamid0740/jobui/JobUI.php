@@ -25,25 +25,41 @@ use pocketmine\permission\PermissionManager;
 use onebone\economyapi\EconomyAPI;
 
 class JobUI extends PluginBase implements Listener{
+
 	/** @var Config */
 	private $jobs;
 	/** @var Config */
 	private $player;
+	/** @var Config */
+	private $messages;
+
+	/** @var string */
+	/** $this->getServer()->getPluginManager()->getPlugin("EconomyAPI") */
+	// public $monetaryunit = EconomyAPI::getInstance()->getMonetaryUnit();
+	
 
 	/** @var  EconomyAPI */
 	private $api;
 
-	/** @var EconomyJobUI   */
+	/** @var JobUI   */
 	private static $instance;
-	
+
 	public function onEnable(){
 		@mkdir($this->getDataFolder());
+
 		if(!is_file($this->getDataFolder()."jobs.yml")){
 			$this->jobs = new Config($this->getDataFolder()."jobs.yml", Config::YAML, yaml_parse($this->readResource("jobs.yml")));
 		}else{
-			$this->jobs = new Config($this->getDataFolder()."jobs.yml", Config::YAML);
+			$this->jobs = new Config($this->getDataFolder() . "jobs.yml", Config::YAML);
 		}
-		$this->player = new Config($this->getDataFolder()."players.yml", Config::YAML);
+
+		if(!is_file($this->getDataFolder() . "messages.yml")){
+			$this->messages = new Config($this->getDataFolder() . "messages.yml", Config::YAML, yaml_parse($this->readResource("messages.yml")));
+		}else{
+			$this->messages = new Config($this->getDataFolder() . "messages.yml", Config::YAML);
+		}
+
+		$this->player = new Config($this->getDataFolder() . "players.yml", Config::YAML);
 
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 
@@ -66,6 +82,20 @@ class JobUI extends PluginBase implements Listener{
 	public function onDisable(){
 		$this->player->save();
 	}
+	
+	/**
+	* Get JobUI messages
+	*
+	* @param string $id
+	*
+	* @return string | bool
+	*/
+	public function getMessage($id){
+		if($this->messages->exists($id)){
+			return $this->messages->get($id);
+		}
+		return false;
+	}
 
 	/**
 	 * @priority LOWEST
@@ -83,12 +113,12 @@ class JobUI extends PluginBase implements Listener{
 				if ($player->hasPermission("jobui.earn.break")) {
 					if($money > 0){
 						$this->api->addMoney($player, $money);
-						$player->sendPopup("§b+ " . $money . "$ for Job!");
+						$player->sendPopup($this->getMessage("earn-popup-1") . $money . EconomyAPI::getInstance()->getMonetaryUnit() . $this->getMessage("earn-popup-2"));
 					}else{
 						$this->api->reduceMoney($player, $money);
 					}
 				}else{
-					$player->sendPopup("§cYou don't have permission to earn money by this Job\nuse /retire to be retired");
+					$player->sendPopup($this->getMessage("break-noperm-popup"));
 				}
 			}
 		}
@@ -110,12 +140,12 @@ class JobUI extends PluginBase implements Listener{
 				if ($player->hasPermission("jobui.earn.place")) {
 					if($money > 0){
 						$this->api->addMoney($player, $money);
-						$player->sendPopup("§b+ " . $money . "$ for Job!");
+						$player->sendPopup($this->getMessage("earn-popup-1") . $money . EconomyAPI::getInstance()->getMonetaryUnit() . $this->getMessage("earn-popup-2"));
 					}else{
 						$this->api->reduceMoney($player, $money);
 					}
 				}else{
-					$player->sendPopup("§cYou don't have permission to earn money by this Job\nuse /retire to be retired");
+					$player->sendPopup($this->getMessage("place-noperm-popup"));
 				}
 			}
 		}
@@ -153,7 +183,7 @@ class JobUI extends PluginBase implements Listener{
 					$this->FormJob($sender);
 					return true;
 				}else{
-					$sender->sendMessage("§7[§6Jobs§7] §cYou can join the job only in the specified world");
+					$sender->sendMessage("§7[§6JobUi§7] " . "§cYou can't join a job in this world");
 					return false;
 				}
 			}
@@ -167,20 +197,20 @@ class JobUI extends PluginBase implements Listener{
 					if($this->player->exists($sender->getName())){
 						$job = $this->player->get($sender->getName());
 						$this->player->remove($sender->getName());
-						$sender->sendMessage("§7[§6Jobs§7] §cYou have retired from the job§e \"$job\"");
+						$sender->sendMessage("§7[§6JobUi§7] " . $this->getMessage("retire-message") . $job);
 						return true;
 					}else{
-						$sender->sendMessage("§7[§6Jobs§7] §cYou don't have a job yet. First join a job then you'll get able to be retired.");
+						$sender->sendMessage("§7[§6JobUi§7] " . $this->getMessage("nojob-retire-message"));
 						return true;
 					}
 				}else{
-					$sender->sendMessage("§7[§6Jobs§7] §cYou can join the job only in the specified world");
+					$sender->sendMessage("§7[§6JobUi§7] " . "§cYou can't get retired in this world");
 					return false;
 				}
 			}
 		}
 	}
-	
+
 	public function FormJob($player){
 		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
 		$form = $api->createSimpleForm(function (Player $player, int $data = null){
@@ -198,30 +228,30 @@ class JobUI extends PluginBase implements Listener{
 					break;
 					
 					case "2";
-					$player->sendMessage("§7[§6Jobs§7] §aYour job is: §e".$this->player->get($player->getName()));
+					$player->sendMessage("§7[§6JobUi§7] " . $this->getMessage("myjob-message") . $this->player->get($player->getName()));
 					break;
 					
 					case "3";
 					if($this->player->exists($player->getName())){
 						$job = $this->player->get($player->getName());
 						$this->player->remove($player->getName());
-						$player->sendMessage("§7[§6Jobs§7] §cYou have retired from the job §e" . $job);
+						$player->sendMessage("§7[§6JobUi§7] " . $this->getMessage("retire-message") . $job);
 					}else{
-						$player->sendMessage("§7[§6Jobs§7] §cYou don't have a job yet. First join a job then you'll be able to get retired.");
+						$player->sendMessage("§7[§6JobUi§7] " . $this->getMessage("nojob-retire-message"));
 					}
 					break;
 				}
 			});
-			$form->setTitle("§aJob");
-			$form->setContent("§aYour Job: §e"  . $this->player->get($player->getName()));
-			$form->addButton("§aJoin a Job");
-			$form->addButton("§6Jobs Info");
-			$form->addButton("§dMy Job");
-			$form->addButton("§cRetire from the Job");
+			$form->setTitle($this->getMessage("title-mainui"));
+			$form->setContent($this->getMessage("myjob-text-mainui")  . $this->player->get($player->getName()));
+			$form->addButton($this->getMessage("jobjoin-button-mainui"));
+			$form->addButton($this->getMessage("jobsinfo-button-mainui"));
+			$form->addButton($this->getMessage("myjob-button-mainui"));
+			$form->addButton($this->getMessage("retire-button-mainui"));
 			$form->sendToPlayer($player);
 			return $form;
 	}
-	
+
 	public function FormJobJoin($player){
 		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
 		$form = $api->createSimpleForm(function (Player $player, int $data = null){
@@ -235,7 +265,7 @@ class JobUI extends PluginBase implements Listener{
 					case "$i";
 						$this->player->set($player->getName(), "$name");
 						$job = $this->player->get($player->getName());
-						$player->sendMessage("§7[§6Jobs§7] §aYou have joined the job §e" . $job);
+						$player->sendMessage("§7[§6JobUi§7] " . $this->getMessage("jobjoin-message") . $job);
 						break;
 					}
 				$i++;
@@ -243,16 +273,16 @@ class JobUI extends PluginBase implements Listener{
 			}
 		);
 			
-			$form->setTitle("§aJobs List");
+			$form->setTitle($this->getMessage("title-jobjoinui"));
 			
 		foreach($this->jobs->getAll() as $name => $job){
-			$form->addButton("§b" . $name);
+			$form->addButton($this->getMessage("color-jobsname-jobjoinui") . $name);
 		}
 			
 			$form->sendToPlayer($player);
 			return $form;
 	}
-	
+
 	public function FormInfo($player){
 		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
 		$form = $api->createSimpleForm(function (Player $player, $data = null){
@@ -266,9 +296,9 @@ class JobUI extends PluginBase implements Listener{
 				break;
 			}
 		});
-		$form->setTitle("§aJobs Info");
-		$form->setContent("§6- §aTree Cutter§6:\n§bOak wood §d[25$] §bSpruce wood §d[25$]\n§bBirch wood §d[25$] §bJungle wood §d[25$]\n§bAcacia wood §d[25$] §bDark Oak wood §d[25$]\n§6- §aMiner§6:\n§bStone §d[25$] §bCoal ore §d[30$]\n§bIron ore §d[35$]");
-		$form->addButton("§aOkay!");	
+		$form->setTitle($this->getMessage("title-jobsinfoui"));
+		$form->setContent($this->getMessage("text-jobsinfoui"));
+		$form->addButton($this->getMessage("exit-button-jobsinfoui"));
 		$form->sendToPlayer($player);
 	}
 }
