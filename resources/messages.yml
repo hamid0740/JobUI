@@ -1,0 +1,43 @@
+---
+# IMPORTANT NOTES: !!! Before Changing the messages read this !!!
+# Use "§" and "0-9" or "a-f" and "r" after it to add a color. E.g. "§6This text will be Orange"
+# Use "\n" to go to the next line. E.g. "First Line\nSecond Line"
+#
+# PopUp that appears when a player earn money by his Job
+earn-popup-1: "§b+ " # between the first part of the popup and the second, will be Money and MonatryUnit like this: "25$"
+earn-popup-2: " for Job!"
+# PopUp that appears when a player has a job but doesn't have "jobui.earn.break" permission
+break-noperm-popup: "§cYou don't have permission to earn money by breaking a block here\nUse /retire to get retired"
+# PopUp that appears when a player has a job but doesn't have "jobui.earn.place" permission
+place-noperm-popup: "§cYou don't have permission to earn money by placing a block here\nUse /retire to get retired"
+# Message the appears when the player get retired by "/retire" command or by the UI
+retire-message: "§cYou have retired from the job §e" # at the end of this message the job will automatically be written
+# Message that appear when a player doesn't have a job and wants to get retired by "/retire" command or by the UI
+nojob-retire-message: "§cYou don't have a job yet. First join a job then you'll be able to get retired."
+# Message that appears when a player wants to know his job by "My Job" button in the UI
+myjob-message: "§aYour job is: §e" # at the end of this message the job will automatically be written
+# Title of the MainUI that appears by "/job" command
+title-mainui: "§bJob"
+# Text that shows the player's job in the MainUI
+myjob-text-mainui: "§aYour Job: §e" # at the end of this text the job will automatically be written
+# Text of the JobJoin button in the MainUI
+jobjoin-button-mainui: "§aJoin a Job"
+# Text of the JobsInfo button in the MainUI
+jobsinfo-button-mainui: "§6Jobs Info"
+# Text of the MyJob button in the MainUI
+myjob-button-mainui: "§dMy Job"
+# Text of the Retire button in the MainUI
+retire-button-mainui: "§cRetire from your Job"
+# Message that appears when a player joins a Job by JobsListUI
+jobjoin-message: "§aYou have joined the job §e" # at the end of this text the job will automatically be written
+# Title of the JobJoinUI that appears by JobJoin button in the MainUI
+title-jobjoinui: "§bJobs List"
+# Color of the JobsName buttons in the JobJoinUI
+color-jobsname-jobjoinui: "§b"
+# Title of the JobsInfoUI that appears by JobsInfo button in the MainUI
+title-jobsinfoui: "§bJobs Info"
+# Text of the JobsInfoUI that is about the jobs and you should add jobs info by yourself (you can use "\n" to go to the next line)
+text-jobsinfoui: "§6- §aTree Cutter§6:\n§bOak wood §d[25$] §bSpruce wood §d[25$]\n§bBirch wood §d[25$] §bJungle wood §d[25$]\n§bAcacia wood §d[25$] §bDark Oak wood §d[25$]\n§6- §aMiner§6:\n§bStone §d[25$] §bCoal ore §d[30$]\n§bIron ore §d[35$]"
+# Text of the Exit button in the JobsInfoUI
+exit-button-jobsinfoui: "§aOkay!"
+...
