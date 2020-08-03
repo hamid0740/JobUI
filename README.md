@@ -1,4 +1,5 @@
 # JobUI
+[![](https://poggit.pmmp.io/shield.state/JobUI)](https://poggit.pmmp.io/p/JobUI) [![](https://poggit.pmmp.io/shield.api/JobUI)](https://poggit.pmmp.io/p/JobUI)
 * __Customizable and Infinite Jobs are supported now. You can change or add jobs in `plugin_data\JobUI\jobs.yml`.__
 * __Customizable Messages are supported now. You can change them in `plugin_data_JobUI\messages.yml`__
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
