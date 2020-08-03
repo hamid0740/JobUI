@@ -3,9 +3,7 @@ version: 2.0.0
 api: 3.9.0
 main: hamid0740\jobui\JobUI
 author: hamid0740
-depend: 
-  - FormAPI
-  - EconomyAPI
+depend: [FormAPI, EconomyAPI]
 
 commands:
   job:
