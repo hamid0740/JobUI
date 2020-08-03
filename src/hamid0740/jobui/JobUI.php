@@ -249,7 +249,7 @@ class JobUI extends PluginBase implements Listener{
 			$form->addButton($this->getMessage("jobsinfo-button-mainui"));
 			$form->addButton($this->getMessage("myjob-button-mainui"));
 			$form->addButton($this->getMessage("retire-button-mainui"));
-			$form->sendToPlayer($player);
+			$player->sendForm($form);
 			return $form;
 	}
 
@@ -279,7 +279,7 @@ class JobUI extends PluginBase implements Listener{
 			$form->addButton($this->getMessage("color-jobsname-jobjoinui") . $name);
 		}
 			
-			$form->sendToPlayer($player);
+			$player->sendForm($form);
 			return $form;
 	}
 
@@ -298,6 +298,6 @@ class JobUI extends PluginBase implements Listener{
 		$form->setTitle($this->getMessage("title-jobsinfoui"));
 		$form->setContent($this->getMessage("text-jobsinfoui"));
 		$form->addButton($this->getMessage("exit-button-jobsinfoui"));
-		$form->sendToPlayer($player);
+		$player->sendForm($form);
 	}
 }
