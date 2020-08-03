@@ -154,7 +154,7 @@ class JobUI extends PluginBase implements Listener{
 	}
 
 	/**
-	 * @return EconomyJobUI
+	 * @return JobUI
 	*/
 	public static function getInstance(){
 		return static::$instance;
