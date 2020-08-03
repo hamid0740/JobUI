@@ -22,6 +22,8 @@ use pocketmine\Player;
 use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
 
+use jojoe77777\FormAPI\SimpleForm;
+
 use onebone\economyapi\EconomyAPI;
 
 class JobUI extends PluginBase implements Listener{
@@ -183,7 +185,7 @@ class JobUI extends PluginBase implements Listener{
 					$this->FormJob($sender);
 					return true;
 				}else{
-					$sender->sendMessage("§7[§6JobUi§7] " . "§cYou can't join a job in this world");
+					$sender->sendMessage("§7[§6JobUI§7] " . "§cYou can't join a job in this world");
 					return false;
 				}
 			}
@@ -197,14 +199,14 @@ class JobUI extends PluginBase implements Listener{
 					if($this->player->exists($sender->getName())){
 						$job = $this->player->get($sender->getName());
 						$this->player->remove($sender->getName());
-						$sender->sendMessage("§7[§6JobUi§7] " . $this->getMessage("retire-message") . $job);
+						$sender->sendMessage("§7[§6JobUI§7] " . $this->getMessage("retire-message") . $job);
 						return true;
 					}else{
-						$sender->sendMessage("§7[§6JobUi§7] " . $this->getMessage("nojob-retire-message"));
+						$sender->sendMessage("§7[§6JobUI§7] " . $this->getMessage("nojob-retire-message"));
 						return true;
 					}
 				}else{
-					$sender->sendMessage("§7[§6JobUi§7] " . "§cYou can't get retired in this world");
+					$sender->sendMessage("§7[§6JobUI§7] " . "§cYou can't get retired in this world");
 					return false;
 				}
 			}
@@ -212,8 +214,7 @@ class JobUI extends PluginBase implements Listener{
 	}
 
 	public function FormJob($player){
-		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
-		$form = $api->createSimpleForm(function (Player $player, int $data = null){
+		$form = new SimpleForm(function (Player $player, int $data = null){
 			$result = $data;
 			if($result === null){
 				return true;
@@ -228,16 +229,16 @@ class JobUI extends PluginBase implements Listener{
 					break;
 					
 					case "2";
-					$player->sendMessage("§7[§6JobUi§7] " . $this->getMessage("myjob-message") . $this->player->get($player->getName()));
+					$player->sendMessage("§7[§6JobUI§7] " . $this->getMessage("myjob-message") . $this->player->get($player->getName()));
 					break;
 					
 					case "3";
 					if($this->player->exists($player->getName())){
 						$job = $this->player->get($player->getName());
 						$this->player->remove($player->getName());
-						$player->sendMessage("§7[§6JobUi§7] " . $this->getMessage("retire-message") . $job);
+						$player->sendMessage("§7[§6JobUI§7] " . $this->getMessage("retire-message") . $job);
 					}else{
-						$player->sendMessage("§7[§6JobUi§7] " . $this->getMessage("nojob-retire-message"));
+						$player->sendMessage("§7[§6JobUI§7] " . $this->getMessage("nojob-retire-message"));
 					}
 					break;
 				}
@@ -253,8 +254,7 @@ class JobUI extends PluginBase implements Listener{
 	}
 
 	public function FormJobJoin($player){
-		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
-		$form = $api->createSimpleForm(function (Player $player, int $data = null){
+		$form = new SimpleForm(function (Player $player, int $data = null){
 			$result = $data;
 			if($result === null){
 				return true;
@@ -265,7 +265,7 @@ class JobUI extends PluginBase implements Listener{
 					case "$i";
 						$this->player->set($player->getName(), "$name");
 						$job = $this->player->get($player->getName());
-						$player->sendMessage("§7[§6JobUi§7] " . $this->getMessage("jobjoin-message") . $job);
+						$player->sendMessage("§7[§6JobUI§7] " . $this->getMessage("jobjoin-message") . $job);
 						break;
 					}
 				$i++;
@@ -284,8 +284,7 @@ class JobUI extends PluginBase implements Listener{
 	}
 
 	public function FormInfo($player){
-		$api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
-		$form = $api->createSimpleForm(function (Player $player, $data = null){
+		$form = new SimpleForm(function (Player $player, $data = null){
 		$result = $data[0];
 					
 		if($result === null){
