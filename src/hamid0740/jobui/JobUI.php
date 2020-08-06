@@ -2,6 +2,7 @@
 
  /*
  * The original EconomyJob is written by OneBone
+ * Used to FormAPI Library virion by jojoe77777
  * added the UI and make it Advanced by hamid0740
  * Discord: hamid0740#3725
  * Github: https://github.com/hamid0740/
@@ -22,23 +23,22 @@ use pocketmine\Player;
 use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
 
-use jojoe77777\FormAPI\SimpleForm;
+use hamid0740\JobUI\FormAPI\Form;
+use hamid0740\JobUI\FormAPI\FormAPI;
+use hamid0740\JobUI\FormAPI\SimpleForm;
+use hamid0740\JobUI\FormAPI\ModalForm;
+use hamid0740\JobUI\FormAPI\CustomForm;
 
 use onebone\economyapi\EconomyAPI;
 
-class JobUI extends PluginBase implements Listener{
+class Main extends PluginBase implements Listener{
 
 	/** @var Config */
 	private $jobs;
 	/** @var Config */
 	private $player;
 	/** @var Config */
-	private $messages;
-
-	/** @var string */
-	/** $this->getServer()->getPluginManager()->getPlugin("EconomyAPI") */
-	// public $monetaryunit = EconomyAPI::getInstance()->getMonetaryUnit();
-	
+	private $messages;	
 
 	/** @var  EconomyAPI */
 	private $api;
