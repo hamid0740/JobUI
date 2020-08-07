@@ -1,0 +1,34 @@
+---
+# IMPORTANT NOTES: !!! Before Changing the messages read this !!!
+# Use "§" and "0-9" or "a-f" and "r" after it to add a color. E.g. "§6This text will be Orange"
+# Use "\n" to go to the next line. E.g. "First Line\nSecond Line"
+# Image Types: 0 (Path like "textures/blocks/coal_ore") and 1 (URL like "https://gamepedia.cursecdn.com/minecraft_gamepedia/c/c5/Oak_Log_Axis_Y_JE5_BE3.png")
+# URL Image Type starts with "https://"
+# If you don't want an image for the button, put the Image Type to: -1
+# NOTE: Path Image Type loads faster
+# If you don't add the buttons details of a new job, the name of the button will be the job's name
+#
+# Tree-Cutter
+# Name of the "Tree-Cutter" job button
+name-Tree-Cutter: "§aTree Cutter"
+# Image Type of the "Tree-Cutter" job button
+image-type-Tree-Cutter: 0
+# Image Path or URL of the "Tree-Cutter" job button
+image-Tree-Cutter: "textures/blocks/log_oak"
+#
+# Miner
+# Name of the "Miner" job button
+name-Miner: "§cMiner"
+# Image Type of the "Miner" job button
+image-type-Miner: 0
+# Image Path or URL of the "Miner" job button
+image-Miner: "textures/blocks/coal_ore"
+#
+# If you want to add more jobs, after "name-", "image-type-", and "image-" write the job name, like below. It should be equal with :
+# name-NewJob: "New Job"
+# image-type-NewJob: 0
+# image-NewJob: "textures/items/diamond_sword"
+#
+# !!! IMPORTANT !!! make sure the new job that you enter, exists in 'jobs.yml' else it won't work
+# !!! IMPORTANT !!! if you enter only "name-" or "image-type-" or "image-" or any 2 of them(not all of them) the details won't be applied for the button
+...
