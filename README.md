@@ -3,7 +3,7 @@
 * __!!! IMPORTANT !!! if you have installed this plugin before, remove the `plugin_data/JobUI` folder then the new Yaml files will be created.__
 * __Customizable and Infinite Jobs are supported now. You can change or add jobs in `plugin_data/JobUI/jobs.yml`.__
 * __Customizable Messages are supported now. You can change them in `plugin_data/JobUI/messages.yml`__
-* __Custom Button names and Images for JobsJoinUI is now supported. You can change them in `plugin_data/JobUI/buttons.yml`__
+* __Custom Button names and Images for JobJoinUI is now supported. You can change them in `plugin_data/JobUI/buttons.yml`__
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money only in a specified world, but before you need to install the PurePerms plugin.
 ### Default Jobs
@@ -40,7 +40,8 @@ Guest:
 ### To-Do list
 * [X] Adding Customizable feature for jobs, so that you will be able to add more jobs
 * [X] Adding Customizable feature for texts of the UI and every messages
-* [X] Changing the methods to use FormAPI
+* [X] Using FormAPI as a Library
+* [X] Adding Customizable feature for Button names and Images for JobJoinUI
 ### Permissions and Commands:
 Permission | Command | Default | About
 ---------- | ------- | ------- | -----
