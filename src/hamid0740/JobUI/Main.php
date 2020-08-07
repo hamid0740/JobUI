@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener{
 	/** @var  EconomyAPI */
 	private $api;
 
-	/** @var JobUI   */
+	/** @var Main */
 	private static $instance;
 
 	public function onEnable(){
@@ -154,7 +154,7 @@ class Main extends PluginBase implements Listener{
 	}
 
 	/**
-	 * @return JobUI
+	 * @return Main
 	*/
 	public static function getInstance(){
 		return static::$instance;
@@ -179,38 +179,32 @@ class Main extends PluginBase implements Listener{
 		if($command->getName() === "job"){
 			if(!$sender instanceof Player){
 				$sender->sendMessage("Please run this command in-game.");
-				return true;
 			}else{
 				if ($sender->hasPermission("jobui.command.job")) {
 					$this->FormJob($sender);
-					return true;
 				}else{
 					$sender->sendMessage("§7[§6JobUI§7] " . "§cYou can't join a job in this world");
-					return false;
 				}
 			}
 		}
 		if($command->getName() === "retire"){
 			if(!$sender instanceof Player){
 				$sender->sendMessage("Please run this command in-game.");
-				return true;
 			}else{
-				if ($sender->hasPermission("jobui.command.retire")) {
+				if ($sender->hasPermission("jobui.command.retire")){
 					if($this->player->exists($sender->getName())){
 						$job = $this->player->get($sender->getName());
 						$this->player->remove($sender->getName());
 						$sender->sendMessage("§7[§6JobUI§7] " . $this->getMessage("retire-message") . $job);
-						return true;
 					}else{
 						$sender->sendMessage("§7[§6JobUI§7] " . $this->getMessage("nojob-retire-message"));
-						return true;
 					}
 				}else{
 					$sender->sendMessage("§7[§6JobUI§7] " . "§cYou can't get retired in this world");
-					return false;
 				}
 			}
 		}
+		return true;
 	}
 
 	public function FormJob($player){
