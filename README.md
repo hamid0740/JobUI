@@ -1,7 +1,9 @@
 # JobUI
 [![](https://poggit.pmmp.io/shield.state/JobUI)](https://poggit.pmmp.io/p/JobUI) [![](https://poggit.pmmp.io/shield.api/JobUI)](https://poggit.pmmp.io/p/JobUI)
-* __Customizable and Infinite Jobs are supported now. You can change or add jobs in `plugin_data\JobUI\jobs.yml`.__
-* __Customizable Messages are supported now. You can change them in `plugin_data_JobUI\messages.yml`__
+* __!!! IMPORTANT !!! if you have installed this plugin before, remove the `plugin_data/JobUI` folder then the new Yaml files will be created.__
+* __Customizable and Infinite Jobs are supported now. You can change or add jobs in `plugin_data/JobUI/jobs.yml`.__
+* __Customizable Messages are supported now. You can change them in `plugin_data/JobUI/messages.yml`__
+* __Custom Button names and Images for JobsJoinUI is now supported. You can change them in `plugin_data/JobUI/buttons.yml`__
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money only in a specified world, but before you need to install the PurePerms plugin.
 ### Default Jobs
@@ -12,8 +14,8 @@
 * [PurePerms by 64FF00](https://poggit.pmmp.io/p/PurePerms/) [[Download]](https://poggit.pmmp.io/r/70018/PurePerms.phar) [[GitHub]](https://github.com/poggit-orphanage/PurePerms) (Optional)
 ### How to let players use /job command and earn money only in a specified world?
 * As I said you need to install the PurePerms plugin.
-* __*Before completing the next steps, make sure that `enable-multiworld-perms` has been set to `true` in `plugin_data\PurePerms\config.yml`.*__
-* Open this file path `plugin_data\PurePerms\groups.yml`. Then the only thing that you should do is to add the world and permissions to the Group you want. I will give an example below:
+* __*Before completing the next steps, make sure that `enable-multiworld-perms` has been set to `true` in `plugin_data/PurePerms/config.yml`.*__
+* Open this file path `plugin_data/PurePerms/groups.yml`. Then the only thing that you should do is to add the world and permissions to the Group you want. I will give an example below:
 ```yaml
 ---
 Guest:
