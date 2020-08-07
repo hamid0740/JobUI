@@ -38,7 +38,9 @@ class Main extends PluginBase implements Listener{
 	/** @var Config */
 	private $player;
 	/** @var Config */
-	private $messages;	
+	private $messages;
+	/** @var Config */
+	private $buttons;
 
 	/** @var  EconomyAPI */
 	private $api;
@@ -48,19 +50,13 @@ class Main extends PluginBase implements Listener{
 
 	public function onEnable(){
 		@mkdir($this->getDataFolder());
-
-		if(!is_file($this->getDataFolder()."jobs.yml")){
-			$this->jobs = new Config($this->getDataFolder()."jobs.yml", Config::YAML, yaml_parse($this->readResource("jobs.yml")));
-		}else{
-			$this->jobs = new Config($this->getDataFolder() . "jobs.yml", Config::YAML);
-		}
-
-		if(!is_file($this->getDataFolder() . "messages.yml")){
-			$this->messages = new Config($this->getDataFolder() . "messages.yml", Config::YAML, yaml_parse($this->readResource("messages.yml")));
-		}else{
-			$this->messages = new Config($this->getDataFolder() . "messages.yml", Config::YAML);
-		}
-
+		$this->saveDefaultConfig();
+		$this->saveResource("jobs.yml");
+		$this->saveResource("messages.yml");
+		$this->saveResource("buttons.yml");
+		$this->jobs = new Config($this->getDataFolder() . "jobs.yml", Config::YAML);
+		$this->messages = new Config($this->getDataFolder() . "messages.yml", Config::YAML);
+		$this->buttons = new Config($this->getDataFolder() . "buttons.yml", Config::YAML);
 		$this->player = new Config($this->getDataFolder() . "players.yml", Config::YAML);
 
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -95,6 +91,20 @@ class Main extends PluginBase implements Listener{
 	public function getMessage($id){
 		if($this->messages->exists($id)){
 			return $this->messages->get($id);
+		}
+		return false;
+	}
+	
+	/**
+	* Get JobUI buttons
+	*
+	* @param string $id
+	*
+	* @return string | bool
+	*/
+	public function getButton($id){
+		if($this->buttons->exists($id)){
+			return $this->buttons->get($id);
 		}
 		return false;
 	}
@@ -270,7 +280,11 @@ class Main extends PluginBase implements Listener{
 			$form->setTitle($this->getMessage("title-jobjoinui"));
 			
 		foreach($this->jobs->getAll() as $name => $job){
-			$form->addButton($this->getMessage("color-jobsname-jobjoinui") . $name);
+			if($this->buttons->exists("name-" . $name) and $this->buttons->exists("image-type-" . $name) and $this->buttons->exists("image-" . $name)){
+				$form->addButton($this->getButton("name-" . $name), $this->getButton("image-type-" . $name), $this->getButton("image-" . $name));
+			}else{
+				$form->addButton($this->getMessage("color-jobsname-jobjoinui") . $name);
+			}
 		}
 			
 			$player->sendForm($form);
