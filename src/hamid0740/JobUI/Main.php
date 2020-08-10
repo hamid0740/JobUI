@@ -216,11 +216,10 @@ class Main extends PluginBase implements Listener{
 
 	public function FormJob($player){
 		$form = new SimpleForm(function (Player $player, int $data = null){
-			$result = $data;
-			if($result === null){
+			if($data === null){
 				return true;
 				}
-				switch($result){
+				switch($data){
 					case "0";
 					$this->FormJobJoin($player);
 					break;
@@ -256,13 +255,12 @@ class Main extends PluginBase implements Listener{
 
 	public function FormJobJoin($player){
 		$form = new SimpleForm(function (Player $player, int $data = null){
-			$result = $data;
-			if($result === null){
+			if($data === null){
 				return true;
 			}
 			$i = 0;
 			foreach($this->jobs->getAll() as $name => $job){
-				switch($result){
+				switch($data){
 					case "$i";
 						$this->player->set($player->getName(), "$name");
 						$job = $this->player->get($player->getName());
@@ -289,13 +287,11 @@ class Main extends PluginBase implements Listener{
 	}
 
 	public function FormInfo($player){
-		$form = new SimpleForm(function (Player $player, $data = null){
-		$result = $data[0];
-					
-		if($result === null){
+		$form = new SimpleForm(function (Player $player, $data = null){					
+		if($data === null){
 			return true;
 		}
-			switch($result){
+			switch($data){
 				case 0:
 				break;
 			}
