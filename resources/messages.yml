@@ -32,11 +32,12 @@ retire-button-mainui: "§cRetire from your Job"
 jobjoin-message: "§aYou have joined the job §e" # at the end of this text the job will automatically be written
 # Title of the JobJoinUI that appears by JobJoin button in the MainUI
 title-jobjoinui: "§bJobs List"
-# Color of the JobsName buttons in the JobJoinUI
-color-jobsname-jobjoinui: "§b"
+# Color of the JobsName buttons in the JobJoinUI which doesn't have details in 'buttons.yml'
+color-jobsname-jobjoinui: "§d"
 # Title of the JobsInfoUI that appears by JobsInfo button in the MainUI
 title-jobsinfoui: "§bJobs Info"
 # Text of the JobsInfoUI that is about the jobs and you should add jobs info by yourself (you can use "\n" to go to the next line)
+# We recommend to write 2 Jobs per line
 text-jobsinfoui: "§6- §aTree Cutter§6:\n§bOak wood §d[25$] §bSpruce wood §d[25$]\n§bBirch wood §d[25$] §bJungle wood §d[25$]\n§bAcacia wood §d[25$] §bDark Oak wood §d[25$]\n§6- §aMiner§6:\n§bStone §d[25$] §bCoal ore §d[30$]\n§bIron ore §d[35$]"
 # Text of the Exit button in the JobsInfoUI
 exit-button-jobsinfoui: "§aOkay!"
