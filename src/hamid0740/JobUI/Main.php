@@ -24,8 +24,6 @@ use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
 
 use jojoe77777\FormAPI;
-use jojoe77777\FormAPI\Form;
-use jojoe77777\FormAPI\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
 
 use onebone\economyapi\EconomyAPI;
