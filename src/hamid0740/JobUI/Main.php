@@ -23,11 +23,8 @@ use pocketmine\Player;
 use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
 
-use hamid0740\JobUI\FormAPI\Form;
-use hamid0740\JobUI\FormAPI\FormAPI;
-use hamid0740\JobUI\FormAPI\SimpleForm;
-use hamid0740\JobUI\FormAPI\ModalForm;
-use hamid0740\JobUI\FormAPI\CustomForm;
+use jojoe77777\FormAPI;
+use jojoe77777\FormAPI\SimpleForm;
 
 use onebone\economyapi\EconomyAPI;
 
