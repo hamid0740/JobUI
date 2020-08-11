@@ -1,5 +1,5 @@
 # JobUI
-[![](https://poggit.pmmp.io/shield.state/JobUI)](https://poggit.pmmp.io/p/JobUI) [![](https://poggit.pmmp.io/shield.api/JobUI)](https://poggit.pmmp.io/p/JobUI)
+[![](https://poggit.pmmp.io/shield.state/JobUI)](https://poggit.pmmp.io/p/JobUI) [![](https://poggit.pmmp.io/shield.api/JobUI)](https://poggit.pmmp.io/p/JobUI) [![](https://poggit.pmmp.io/shield.dl.total/JobUI)](https://poggit.pmmp.io/p/JobUI) [![](https://poggit.pmmp.io/shield.dl/JobUI)](https://poggit.pmmp.io/p/JobUI)
 * __!!! IMPORTANT !!! if you have installed this plugin before, remove the `plugin_data/JobUI` folder then the new Yaml files will be created.__
 * __Customizable and Infinite Jobs are supported now. You can change or add jobs in `plugin_data/JobUI/jobs.yml`.__
 * __Customizable Messages are supported now. You can change them in `plugin_data/JobUI/messages.yml`__
