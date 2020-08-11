@@ -7,8 +7,8 @@
 * I changed the default permissions to "op" to prevent earning money in a "Build and Mine Protected World" like Lobby.
 * You will learn how to let players use /job command and earn money only in a specified world, but before you need to install the PurePerms plugin.
 ### Default Jobs
-* Tree-Cutter: By joining this job, when you break any kind of logs with any directions you will earn 25$.
-* Miner: By joining this job, when you break Stone 25$, Coal ore 30$ and Iron ore 35$.
+* __Tree-Cutter:__ By joining this job, when you break any kind of logs with any directions you will earn 25$.
+* __Miner:__ By joining this job, when you break Stone 25$, Coal ore 30$ and Iron ore 35$.
 ### Dependencies:
 * [EconomyAPI by onebone](https://poggit.pmmp.io/p/EconomyAPI/) [[Download]](https://poggit.pmmp.io/r/34531/EconomyAPI.phar) [[GitHub]](https://github.com/poggit-orphanage/EconomyS/) __(Required)__
 * [PurePerms by 64FF00](https://poggit.pmmp.io/p/PurePerms/) [[Download]](https://poggit.pmmp.io/r/70018/PurePerms.phar) [[GitHub]](https://github.com/poggit-orphanage/PurePerms) (Optional)
