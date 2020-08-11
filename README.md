@@ -40,7 +40,6 @@ Guest:
 ### To-Do list
 * [X] Adding Customizable feature for jobs, so that you will be able to add more jobs
 * [X] Adding Customizable feature for texts of the UI and every messages
-* [X] Using FormAPI as a Library
 * [X] Adding Customizable feature for Button names and Images for JobJoinUI
 ### Permissions and Commands:
 Permission | Command | Default | About
