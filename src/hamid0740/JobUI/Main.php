@@ -241,7 +241,7 @@ class Main extends PluginBase implements Listener{
 			if(!$sender instanceof Player){
 				$sender->sendMessage("Please run this command in-game.");
 			}else{
-				if ($sender->hasPermission("jobui.command.job") or $player->hasPermission("jobui.*")) {
+				if ($sender->hasPermission("jobui.command.job") or $sender->hasPermission("jobui.*")) {
 					$this->FormJob($sender);
 				}else{
 					$sender->sendMessage("§7[§6JobUI§7] " . "§cYou can't join a job in this world");
@@ -252,7 +252,7 @@ class Main extends PluginBase implements Listener{
 			if(!$sender instanceof Player){
 				$sender->sendMessage("Please run this command in-game.");
 			}else{
-				if ($sender->hasPermission("jobui.command.retire") or $player->hasPermission("jobui.*")){
+				if ($sender->hasPermission("jobui.command.retire") or $sender->hasPermission("jobui.*")){
 					if($this->player->exists($sender->getName())){
 						$job = $this->player->get($sender->getName());
 						$this->player->remove($sender->getName());
