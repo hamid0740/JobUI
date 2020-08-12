@@ -1,5 +1,5 @@
 name: JobUI
-version: 2.1.2
+version: 2.2.0
 api: 3.9.0
 main: hamid0740\JobUI\Main
 author: hamid0740
@@ -17,15 +17,27 @@ commands:
     permission: jobui.command.retire
 
 permissions:
+  jobui.*:
+    description: Allows player to use all commands, all earning ways and join all of the jobs of JobUI plugin
+    default: op
+  jobui.job.*:
+    description: Allows player to join all of the jobs
+    default: op
   jobui.command.job:
     description: Allows player to use /job
-    default: op
+    default: true
   jobui.command.retire:
     description: Allows player to use /retire
     default: true
   jobui.earn.break:
-    description: Allows player to earn money by a breaking job(Best choice for only one world earning)
+    description: Allows player to earn money by a breaking job
     default: op
   jobui.earn.place:
-    description: Allows player to earn money by a placing job(Best choice for only one world earning)
+    description: Allows player to earn money by a placing job
+    default: op
+  jobui.earn.hunter:
+    description: Allows player to earn money by a killing mobs job
+    default: op
+  jobui.earn.murderer:
+    description: Allows player to earn money by a killing players job
     default: op
