@@ -63,7 +63,7 @@ Guest:
 Permission | Command | Default | About
 ---------- | ------- | ------- | -----
 jobui.* | - | op | Able to use all commands, all earning ways and join all of the jobs of JobUI plugin
-jobui.job.* | - | Able to join all of the jobs
+jobui.job.* | - | op | Able to join all of the jobs
 jobui.command.job | /job | true | Able to see the UI of the Jobs
 jobui.command.retire | /retire | true | Able to be retired 
 jobui.earn.break | - | op | Able to earn money by a Breaking Job
