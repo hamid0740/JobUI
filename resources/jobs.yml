@@ -1,34 +1,82 @@
 ---
-# Job Types: "break" & "place"
+# Mission Types: "Break" & "Place" & "Hunter" & "Murderer"
 # Add more jobs in this format:
 # Job-Name: (can contain a-z, A-Z, 0-9 & -)(don't use 0-9 or - at the first of the Job's name)
-#   BlockID:BlockData:JobType: Money
-# e.g.
-# 2:0:break: 10 (By breaking Grass you will earn 10$)
-# 2:0:place: 10 (By placing Grass you will earn 10$)
+#   Button-Name: "§fYour Job Button Name"
+#   Image-Type: 0
+#   Image: "textures/blocks/diamond_block"
+#   Info: "You New Job Info"
+#   Permission: "jobui.job.JobName" (can be anything like "job.JobName")
+#   Mission:
+#     BlockID:BlockData:MissionType: Money (if you want Break or Place JobType)
+#     MissionType: Money (if you want Hunter or Murderer JobType)
+#     e.g.
+#     2:0:Break: 10 (By Breaking Grass you will earn 10$)
+#     2:0:Place: 10 (By Placing Grass you will earn 10$)
+#     Hunter: 20 (By Killing Mobs or Monsters you will earn 20$)
+#     Murderer: 30 (By Killing Players you will earn 30$)
+#
+# NOTE: Even you can add more than 1 MissionType for each Job. So that you will have a Mixed Job.
+# For example a combination of a Break and Murderer MissionType ;)
+#
+# NOTES FOR CHANGING THE UI DETAILS: (Button-Name & Image-Type & Image)
+# Use "§" and "0-9" or "a-f" and "r" after it to add a color. E.g. "§6This text will be Orange"
+# Use "\n" to go to the next line. E.g. "First Line\nSecond Line"
+# Image Types: 0 (Path like "textures/blocks/coal_ore") and 1 (URL like "https://gamepedia.cursecdn.com/minecraft_gamepedia/c/c5/Oak_Log_Axis_Y_JE5_BE3.png")
+# URL Image Type starts with "https://"
+# If you don't want an image for the button, put the Image Type to: -1
+# NOTE: Path Image Type loads faster
 #
 # IMPORTANT NOTE: if you don't follow the right format for jobs, your server might crash.
 Tree-Cutter:
-  17:0:break: 25
-  17:1:break: 25
-  17:2:break: 25
-  17:3:break: 25
-  17:4:break: 25
-  17:5:break: 25
-  17:6:break: 25
-  17:7:break: 25
-  17:8:break: 25
-  17:9:break: 25
-  17:10:break: 25
-  17:11:break: 25
-  162:0:break: 25
-  162:1:break: 25
-  162:4:break: 25
-  162:5:break: 25
-  162:8:break: 25
-  162:9:break: 25
+  Button-Name: "§aTree Cutter"
+  Image-Type: 0
+  Image: "textures/blocks/log_oak"
+  Info: "§6- §aTree Cutter§6:\n§bOak wood §d[25$] §bSpruce wood §d[25$]\n§bBirch wood §d[25$] §bJungle wood §d[25$]\n§bAcacia wood §d[25$] §bDark Oak wood §d[25$]"
+  Permission: "jobui.job.tree-cutter"
+  Mission:
+    17:0:Break: 25
+    17:1:Break: 25
+    17:2:Break: 25
+    17:3:Break: 25
+    17:4:Break: 25
+    17:5:Break: 25
+    17:6:Break: 25
+    17:7:Break: 25
+    17:8:Break: 25 
+    17:9:Break: 25
+    17:10:Break: 25
+    17:11:Break: 25
+    162:0:Break: 25
+    162:1:Break: 25
+    162:4:Break: 25
+    162:5:Break: 25
+    162:8:Break: 25
+    162:9:Break: 25
 Miner:
-  1:0:break: 25
-  16:0:break: 30
-  15:0:break: 35
+  Button-Name: "§3Miner"
+  Image-Type: 0
+  Image: "textures/blocks/coal_ore"
+  Info: "§6- §3Miner§6:\n§bStone §d[25$] §bCoal ore §d[30$]\n§bIron ore §d[35$]"
+  Permission: "jobui.job.miner"
+  Mission:
+    1:0:Break: 25
+    16:0:Break: 30
+    15:0:Break: 35
+Hunter:
+  Button-Name: "§6Hunter\n§4Killing Mobs"
+  Image-Type: 0
+  Image: "textures/items/crossbow_arrow"
+  Info: "§e- §6Hunter§e:\n§bKilling Mobs §d[30$]"
+  Permission: "jobui.job.hunter"
+  Mission:
+    Hunter: 30
+Murderer:
+  Button-Name: "§cMurderer\n§4Killing Players"
+  Image-Type: 0
+  Image: "textures/items/iron_axe"
+  Info: "§e- §6Hunter§e:\n§bKilling Players §d[50$]"
+  Permission: "jobui.job.murderer"
+  Mission:
+    Murderer: 50
 ...
