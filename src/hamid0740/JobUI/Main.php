@@ -42,8 +42,6 @@ class Main extends PluginBase implements Listener{
 	private $player;
 	/** @var Config */
 	private $messages;
-	/** @var Config */
-	private $buttons;
 
 	/** @var  EconomyAPI */
 	private $api;
