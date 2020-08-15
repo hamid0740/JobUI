@@ -524,18 +524,22 @@ class Main extends PluginBase implements Listener{
 				switch($data){
 					case "0":
 						break;
+					case "1":
+						$this->FormJob($player);
+						break;
 				}
 			}
 		});
 		
 		$form->setTitle($this->getMessage("title-myjobinfoui"));
-		if($this->player->exists($player->getName())["JobID"]){
+		if($this->player->exists($player->getName())){
 			$job = $this->jobs->get($this->player->get($player->getName())["JobID"]);
 			$form->setContent($job["Info"]);
 		}else{
 			$form->setContent($this->getMessage("nojob-text-myjobinfoui"));
 		}
 		$form->addButton($this->getMessage("exit-button-myjobinfoui"));
+		$form->addButton($this->getMessage("return-to-mainui-button-myjobinfoui"));
 		
 		$player->sendForm($form);
 		return $form;
