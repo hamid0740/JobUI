@@ -6,42 +6,86 @@
 # PopUp that appears when a player earn money by his Job
 earn-popup-1: "§b+ " # between the first part of the popup and the second, will be Money and MonatryUnit like this: "25$"
 earn-popup-2: " for Job!"
+# PopUp that appears when a player completes the progress of a Goal Mode Job
+salary-popup-1: "§b+ " # between the first part of the popup and the second, will be Money and MonatryUnit like this: "25$"
+salary-popup-2: " as Job salary!"
+# PopUp that appears when a player adds the progress of a Goal Mode Job
+progress-popup: "§6Progress of your job: " # at the end of this popup the progress of the player's job will automatically be written
+
+
+# PopUp that appears when a player has a job but doesn't have "jobui.progress.break" permission
+progress-break-noperm-message: "§cYou don't have permission to increase your job's progress by Breaking a block here. Get to the right world or Use /retire to get retired."
+# PopUp that appears when a player has a job but doesn't have "jobui.progress.place" permission
+progress-place-noperm-message: "§cYou don't have permission to increase your job's progress by Placing a block here. Get to the right world or Use /retire to get retired."
+# PopUp that appears when a player has a job but doesn't have "jobui.progress.hunter" permission
+progress-hunter-noperm-message: "§cYou don't have permission to increase your job's progress by Killing Mobs here. Get to the right world or Use /retire to get retired."
+# PopUp that appears when a player has a job but doesn't have "jobui.progress.murderer" permission
+progress-murderer-noperm-message: "§cYou don't have permission to increase your job's progress by Killing Player here. Get to the right world or Use /retire to get retired."
+
+
 # PopUp that appears when a player has a job but doesn't have "jobui.earn.break" permission
-break-noperm-popup: "§cYou don't have permission to earn money by breaking a block here\nUse /retire to get retired"
+break-noperm-message: "§cYou don't have permission to earn money by Breaking a block here. Get to the right world or Use /retire to get retired."
 # PopUp that appears when a player has a job but doesn't have "jobui.earn.place" permission
-place-noperm-popup: "§cYou don't have permission to earn money by placing a block here\nUse /retire to get retired"
+place-noperm-message: "§cYou don't have permission to earn money by Placing a block here. Get to the right world or Use /retire to get retired."
 # PopUp that appears when a player has a job but doesn't have "jobui.earn.hunter" permission
-hunter-noperm-popup: "§cYou don't have permission to earn money by Killing Mobs here\nUse /retire to get retired"
+hunter-noperm-message: "§cYou don't have permission to earn money by Killing Mobs here. Get to the right world or Use /retire to get retired."
 # PopUp that appears when a player has a job but doesn't have "jobui.earn.murderer" permission
-murderer-noperm-popup: "§cYou don't have permission to earn money by Killing Player here\nUse /retire to get retired"
+murderer-noperm-message: "§cYou don't have permission to earn money by Killing Player here. Get to the right world or Use /retire to get retired."
+
+
+# Message that appears when a player joins a Job by JobsListUI
+jobjoin-message: "§aYou have joined the job §e" # at the end of this text the job will automatically be written
+# Message that appears when a player joins a Job by JobsListUI
+jobjoin-noperm-message: "§cYou don't have permission to join the job §e" # at the end of this text the job will automatically be written
 # Message the appears when the player get retired by "/retire" command or by the UI
 retire-message: "§cYou have retired from the job §e" # at the end of this message the job will automatically be written
+# Message the appears when the player finishes a GoalMode job and earns his salary and retires from his job
+salary-retire-message: "§aYour job has been finished and you got your salary. Now you can join another job. Also you have retired from the job §e" # at the end of this message the job will automatically be written
 # Message that appear when a player doesn't have a job and wants to get retired by "/retire" command or by the UI
 nojob-retire-message: "§cYou don't have a job yet. First join a job then you'll be able to get retired."
+
+
 # Message that appears when a player wants to know his job by "My Job" button in the UI
 myjob-message: "§aYour job is: §e" # at the end of this message the job will automatically be written
+# Mesage that appears when a player wants to know his job's progress status by "My Job" button in the UI (Only for GoalMode jobs)
+progress-myjob-message: "§aProgress of your job is: §e" # at the end of this message the progress of the player's job will automatically be written
 # Message that appears when a player wants to know his job by "My Job" button in the UI but he doesn't have a job
 nojob-message: "§cYou don't have a job yet. First join a job then you'll be able to know your job."
+
+
 # Title of the MainUI that appears by "/job" command
 title-mainui: "§bJob"
 # Text that shows the player's job in the MainUI
 myjob-text-mainui: "§aYour Job: §e" # at the end of this text the job will automatically be written
+# Text that shows the player's job in the MainUI
+progress-myjob-text-mainui: "§aProgress of your Job: §e" # at the end of this message the progress of the player's job will automatically be written
 # Text that shows the player's job in the MainUI when the player doesn't have a job
 nojob-text-mainui: "§cYou don't have a job"
 # Text of the JobJoin button in the MainUI
 jobjoin-button-mainui: "§aJoin a Job"
 # Text of the JobsInfo button in the MainUI
-jobsinfo-button-mainui: "§6My Job Info"
+myjobinfo-button-mainui: "§6My Job Info"
 # Text of the MyJob button in the MainUI
 myjob-button-mainui: "§dMy Job"
 # Text of the Retire button in the MainUI
 retire-button-mainui: "§cRetire from your Job"
-# Message that appears when a player joins a Job by JobsListUI
-jobjoin-message: "§aYou have joined the job §e" # at the end of this text the job will automatically be written
-# Message that appears when a player joins a Job by JobsListUI
-jobjoin-noperm-message: "§cYou don't have permission to join the job §e" # at the end of this text the job will automatically be written
-# Title of the JobJoinUI that appears by JobJoin button in the MainUI
-title-jobjoinui: "§bJobs List"
+
+
+# Title of the JobsListUI that appears by JobJoin button in the MainUI
+title-jobslistui: "§bJobs List"
+# Text that shows a message in JobsListUI 
+text-jobslistui: "§aWhich job do you want to join?"
+# Text of the Return to MainUI button in the JobsListUI
+return-to-mainui-button-jobslistui: "§cReturn to the Main Menu"
+
+# Title of the JobsListUI that appears by JobJoin button in the MainUI
+title-jobjoinui: "§bJoin a Job"
+# Text of the Join button in the JobJoinUI
+join-button-jobjoinui: "§aJoin the job §e" # at the end of this message the Name of the job will automatically be written
+# Text of the Return to JobsListUI button in the JobJoinUI
+return-to-jobslistui-button-jobjoinui: "§cReturn to the Jobs List"
+
+
 # Title of the MyJobInfoUI that appears by JobsInfo button in the MainUI
 title-myjobinfoui: "§bMy Job Info"
 # Text of the MyJobInfoUI when a player doesn't have a job
