@@ -1,5 +1,5 @@
 name: JobUI
-version: 2.2.0
+version: 2.3.2
 api: 3.9.0
 main: hamid0740\JobUI\Main
 author: hamid0740
@@ -40,4 +40,16 @@ permissions:
     default: op
   jobui.earn.murderer:
     description: Allows player to earn money by a killing players job
+    default: op
+  jobui.progress.break:
+    description: Allows player to increase the job progress by a breaking job
+    default: op
+  jobui.progress.place:
+    description: Allows player to increase the job progress by a placing job
+    default: op
+  jobui.progress.hunter:
+    description: Allows player to increase the job progress by a killing mobs job
+    default: op
+  jobui.progress.murderer:
+    description: Allows player to increase the job progress by a killing players job
     default: op
