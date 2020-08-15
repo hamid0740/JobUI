@@ -1,12 +1,19 @@
 ---
 # Mission Types: "Break" & "Place" & "Hunter" & "Murderer"
 # Add more jobs in this format:
-# Job-Name: (can contain a-z, A-Z, 0-9 & -)(don't use 0-9 or - at the first of the Job's name)
+#
+# (SIMPLE MODE JOB)
+# Job-ID: (can contain only numbers 0-9)
+#   Name: "Job Name"
 #   Button-Name: "§fYour Job Button Name"
 #   Image-Type: 0
 #   Image: "textures/blocks/diamond_block"
-#   Info: "You New Job Info"
+#   Info: "Your New Job Info"
 #   Permission: "jobui.job.JobName" (can be anything like "job.JobName")
+#   Mode:
+#     Name: "Simple"
+#     Goal: 0 (It should be 0 if the JobMode is Simple)
+#     Salary: 0 (It should be 0 if the JobMode is Simple)
 #   Mission:
 #     BlockID:BlockData:MissionType: Money (if you want Break or Place JobType)
 #     MissionType: Money (if you want Hunter or Murderer JobType)
@@ -15,6 +22,27 @@
 #     2:0:Place: 10 (By Placing Grass you will earn 10$)
 #     Hunter: 20 (By Killing Mobs or Monsters you will earn 20$)
 #     Murderer: 30 (By Killing Players you will earn 30$)
+#
+# (GOAL MODE JOB)
+# Job-ID: (can contain only numbers 0-9)
+#   Name: "Job Name"
+#   Button-Name: "§fYour Job Button Name"
+#   Image-Type: 0
+#   Image: "textures/blocks/diamond_block"
+#   Info: "Your New Job Info"
+#   Permission: "jobui.job.JobName" (can be anything like "job.JobName")
+#   Mode:
+#     Name: "Goal"
+#     Goal: 20
+#     Salary: 500
+#   Mission:
+#     BlockID:BlockData:MissionType: Money (if you want Break or Place JobType)(Money should be 0 if the JobMode is Goal)
+#     MissionType: Money (if you want Hunter or Murderer JobType)(Money should be 0 if the JobMode is Goal)
+#     e.g.
+#     2:0:Break: 0 (It should be 0 if the JobMode is Goal)
+#     2:0:Place: 0 (It should be 0 if the JobMode is Goal)
+#     Hunter: 0 (It should be 0 if the JobMode is Goal)
+#     Murderer: 0 (It should be 0 if the JobMode is Goal)
 #
 # NOTE: Even you can add more than 1 MissionType for each Job. So that you will have a Mixed Job.
 # For example a combination of a Break and Murderer MissionType ;)
@@ -28,12 +56,17 @@
 # NOTE: Path Image Type loads faster
 #
 # IMPORTANT NOTE: if you don't follow the right format for jobs, your server might crash.
-Tree-Cutter:
+1:
+  Name: "Tree Cutter"
   Button-Name: "§aTree Cutter"
   Image-Type: 0
   Image: "textures/blocks/log_oak"
-  Info: "§6- §aTree Cutter§6:\n§bOak wood §d[25$] §bSpruce wood §d[25$]\n§bBirch wood §d[25$] §bJungle wood §d[25$]\n§bAcacia wood §d[25$] §bDark Oak wood §d[25$]"
+  Info: "§6- §aTree Cutter§6:\n§dMission:\n§d(B)§bOak log §d[25$] (B)§bSpruce log §d[25$]\n§d(B)§bBirch log §d[25$] (B)§bJungle log §d[25$]\n§d(B)§bAcacia log §d[25$] (B)§bDark Oak log §d[25$]"
   Permission: "jobui.job.tree-cutter"
+  Mode:
+    Name: "Simple"
+    Goal: 0
+    Salary: 0
   Mission:
     17:0:Break: 25
     17:1:Break: 25
@@ -53,30 +86,116 @@ Tree-Cutter:
     162:5:Break: 25
     162:8:Break: 25
     162:9:Break: 25
-Miner:
+2:
+  Name: "Miner"
   Button-Name: "§3Miner"
   Image-Type: 0
   Image: "textures/blocks/coal_ore"
-  Info: "§6- §3Miner§6:\n§bStone §d[25$] §bCoal ore §d[30$]\n§bIron ore §d[35$]"
+  Info: "§6- §3Miner§6:\n§dMission:\n§d(B)§bStone §d[25$] (B)§bCoal ore §d[30$]\n§d(B)§bIron ore §d[35$]"
   Permission: "jobui.job.miner"
+  Mode:
+    Name: "Simple"
+    Goal: 0
+    Salary: 0
   Mission:
     1:0:Break: 25
     16:0:Break: 30
     15:0:Break: 35
-Hunter:
+3:
+  Name: "Hunter"
   Button-Name: "§6Hunter\n§4Killing Mobs"
   Image-Type: 0
   Image: "textures/items/crossbow_arrow"
-  Info: "§e- §6Hunter§e:\n§bKilling Mobs §d[30$]"
+  Info: "§a- §6Hunter§a:\n§dMission:\n§bKilling Mobs §d[30$]"
   Permission: "jobui.job.hunter"
+  Mode:
+    Name: "Simple"
+    Goal: 0
+    Salary: 0
   Mission:
     Hunter: 30
-Murderer:
+4:
+  Name: "Murderer"
   Button-Name: "§cMurderer\n§4Killing Players"
   Image-Type: 0
   Image: "textures/items/iron_axe"
-  Info: "§e- §6Hunter§e:\n§bKilling Players §d[50$]"
+  Info: "§6- §cMurderer§6:\n§dMission:\n§bKilling Players §d[50$]"
   Permission: "jobui.job.murderer"
+  Mode:
+    Name: "Simple"
+    Goal: 0
+    Salary: 0
   Mission:
     Murderer: 50
+5:
+  Name: "Tree Cutter Goal"
+  Button-Name: "§aTree Cutter\n§dGoal"
+  Image-Type: 0
+  Image: "textures/blocks/log_oak"
+  Info: "§6- §aTree Cutter(Goal Mode)§6:\n§dMission:\n§d(B)§bOak log§d, (B)§bSpruce log§d,\n§d(B)§bBirch log§d, (B)§bJungle log§d,\n§d(B)§bAcacia log§d, (B)§bDark Oak log\n§cGoal: §e20\n§cSalary: §e500"
+  Permission: "jobui.job.tree-cutter-goal"
+  Mode:
+    Name: "Goal"
+    Goal: 20
+    Salary: 500
+  Mission:
+    17:0:Break: 0
+    17:1:Break: 0
+    17:2:Break: 0
+    17:3:Break: 0
+    17:4:Break: 0
+    17:5:Break: 0
+    17:6:Break: 0
+    17:7:Break: 0
+    17:8:Break: 0 
+    17:9:Break: 0
+    17:10:Break: 0
+    17:11:Break: 0
+    162:0:Break: 0
+    162:1:Break: 0
+    162:4:Break: 0
+    162:5:Break: 0
+    162:8:Break: 0
+    162:9:Break: 0
+6:
+  Name: "Miner Goal"
+  Button-Name: "§3Miner\n§dGoal"
+  Image-Type: 0
+  Image: "textures/blocks/coal_ore"
+  Info: "§6- §3Miner(Goal Mode)§6:\n§dMission:\n§d(B)§bStone§d, (B)§bCoal ore§d,\n§d(B)§bIron ore\n§cGoal: §e20\n§cSalary: §e600"
+  Permission: "jobui.job.miner-goal"
+  Mode:
+    Name: "Goal"
+    Goal: 20
+    Salary: 600
+  Mission:
+    1:0:Break: 0
+    16:0:Break: 0
+    15:0:Break: 0
+7:
+  Name: "Hunter Goal"
+  Button-Name: "§6Hunter\n§dGoal"
+  Image-Type: 0
+  Image: "textures/items/crossbow_arrow"
+  Info: "§e- §6Hunter(Goal Mode)§e:\n§dMission:\n§bKilling Mobs\n§cGoal: §e20\n§cSalary: §e600"
+  Permission: "jobui.job.hunter-goal"
+  Mode:
+    Name: "Goal"
+    Goal: 20
+    Salary: 600
+  Mission:
+    Hunter: 0
+8:
+  Name: "Murderer Goal"
+  Button-Name: "§cMurderer\n§dGoal"
+  Image-Type: 0
+  Image: "textures/items/iron_axe"
+  Info: "§6- §cMurderer(Goal Mode)§6:\n§dMission:\n§bKilling Players\n§cGoal: §e20\n§cSalary: §e1000"
+  Permission: "jobui.job.murderer-goal"
+  Mode:
+    Name: "Goal"
+    Goal: 20
+    Salary: 1000
+  Mission:
+    Murderer: 0
 ...
