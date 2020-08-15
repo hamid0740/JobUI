@@ -529,8 +529,8 @@ class Main extends PluginBase implements Listener{
 		});
 		
 		$form->setTitle($this->getMessage("title-myjobinfoui"));
-		if($this->player->exists($player->getName())){
-			$job = $this->jobs->get($this->player->get($player->getName())["JobId"]);
+		if($this->player->exists($player->getName())["JobID"]){
+			$job = $this->jobs->get($this->player->get($player->getName())["JobID"]);
 			$form->setContent($job["Info"]);
 		}else{
 			$form->setContent($this->getMessage("nojob-text-myjobinfoui"));
