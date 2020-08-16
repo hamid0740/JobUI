@@ -457,7 +457,7 @@ class Main extends PluginBase implements Listener{
 							if ($player->hasPermission($job["Permission"]) or $player->hasPermission("jobui.job.*") or $player->hasPermission("jobui.*")){
 								$this->FormJobJoin($player, $job, $name);
 							}else{
-								$player->sendMessage("§7[§6JobUI§7] " . $this->getMessage("jobjoin-noperm-message") . $job);
+								$player->sendMessage("§7[§6JobUI§7] " . $this->getMessage("jobjoin-noperm-message") . $name);
 							}
 							break;
 					}
