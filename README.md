@@ -1,5 +1,5 @@
 # JobUI
-[![](https://poggit.pmmp.io/shield.state/JobUI)](https://poggit.pmmp.io/p/JobUI) [![](https://poggit.pmmp.io/shield.api/JobUI)](https://poggit.pmmp.io/p/JobUI) [![](https://poggit.pmmp.io/shield.dl.total/JobUI)](https://poggit.pmmp.io/p/JobUI) [![](https://poggit.pmmp.io/shield.dl/JobUI)](https://poggit.pmmp.io/p/JobUI)
+[![Plugin Status](https://poggit.pmmp.io/shield.state/JobUI)](https://poggit.pmmp.io/p/JobUI) [![Plugin Version](https://poggit.pmmp.io/shield.api/JobUI)](https://poggit.pmmp.io/p/JobUI) [![Downloads](https://poggit.pmmp.io/shield.dl/JobUI)](https://poggit.pmmp.io/p/JobUI) [![Total Downloads](https://poggit.pmmp.io/shield.dl.total/JobUI)](https://poggit.pmmp.io/p/JobUI)
 * __!!! IMPORTANT !!! if you have installed this plugin before, remove the `plugin_data/JobUI` folder then the new Yaml files will be created.__
 * __Simple Mode & Goal Mode Jobs are supported. By joining SimpleMode Jobs when you do 1 mission you will earn the specified money. By joining GoalMode Jobs when you complete the Goal you will earn the specified salary. You can change the Modes of jobs in `plugin_data/JobUI/jobs.yml`__
 * __Customisable and Infinite Jobs are supported. You can edit or add jobs in `plugin_data/JobUI/jobs.yml`.__
@@ -66,7 +66,9 @@ Guest:
 * Also, he will be able to earn money or increase the progress of a job by a "Hunter" MissionType only in the "Survival" world
 * Also, he will be able to earn money or increase the progress of a job by a "Murderer" MissionType only in the "PvP" world
 ### Image
-![Preview](http://www.mediafire.com/convkey/c57e/26ld17819ayjny3zg.jpg)
+![Image](http://www.mediafire.com/convkey/c57e/26ld17819ayjny3zg.jpg)
+### Video
+[![Video](https://img.youtube.com/vi/kkwxWiDJZ2k/0.jpg)](https://www.youtube.com/watch?v=kkwxWiDJZ2k)
 ### To-Do list
 * [X] Adding Customizable feature for jobs, so that you will be able to add more jobs
 * [X] Adding Customizable feature for texts of the UI and every messages
