@@ -78,6 +78,7 @@ text-jobslistui: "§aWhich job do you want to join?"
 # Text of the Return to MainUI button in the JobsListUI
 return-to-mainui-button-jobslistui: "§cReturn to the Main Menu"
 
+
 # Title of the JobsListUI that appears by JobJoin button in the MainUI
 title-jobjoinui: "§bJoin a Job"
 # Text of the Join button in the JobJoinUI
@@ -92,4 +93,6 @@ title-myjobinfoui: "§bMy Job Info"
 nojob-text-myjobinfoui: "§cYou don't have a job yet. First join a job then you'll be able to know your job info."
 # Text of the Exit button in the MyJobInfoUI
 exit-button-myjobinfoui: "§aOkay!"
+# Text of the Return to MainUI button in the MyJobInfoUI
+return-to-mainui-button-myjobinfoui: "§cReturn to the Main Menu"
 ...
