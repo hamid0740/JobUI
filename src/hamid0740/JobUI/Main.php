@@ -118,6 +118,7 @@ class Main extends PluginBase implements Listener{
 	public function onBlockBreak(BlockBreakEvent $event){
 		$player = $event->getPlayer();
 		$block = $event->getBlock();
+
 		try {
 			if ($this->jobs->get($this->player->get($player->getName())) == true or $this->jobs->get($this->player->get($player->getName())) == false){return;}
 		} catch (\Throwable $th) {
@@ -125,6 +126,7 @@ class Main extends PluginBase implements Listener{
 		}
 		
 		if ($event->isCancelled()){return;}
+		if ($player->isCreative()){return;}
 		$job = $this->jobs->get($this->player->get($player->getName())["JobID"]);
 		if($job !== false){
 			$player_data = $this->player->get($player->getName());
@@ -172,7 +174,7 @@ class Main extends PluginBase implements Listener{
 	}
 
 	/**
-	 * @priority LOWEST
+	 * @priority HIGHEST
 	 * @ignoreCancelled true
 	 * @param BlockPlaceEvent $event
 	 */
@@ -184,6 +186,8 @@ class Main extends PluginBase implements Listener{
 		} catch (\Throwable $th) {
 			//throw $th;
 		}
+		if ($event->isCancelled()){return;}
+		if ($player->isCreative()){return;}
 		$job = $this->jobs->get($this->player->get($player->getName())["JobID"]);
 		if($job !== false){
 			$player_data = $this->player->get($player->getName());
