@@ -4,7 +4,7 @@
 	* The original EconomyJob is written by OneBone
 	* Used the FormAPI Library virion by jojoe77777
 	* Added the UI and make it Advanced by hamid0740
-	* Discord: hamid0740#3725
+	* Discord: hamid0740#7777
 	* Github: https://github.com/hamid0740/
 	* Poggit: https://poggit.pmmp.io/p/JobUI
 	* Telegram & Instagram: @hamid0740
@@ -126,7 +126,6 @@ class Main extends PluginBase implements Listener{
 		}
 		
 		if ($event->isCancelled()){return;}
-		if ($player->isCreative()){return;}
 		$job = $this->jobs->get($this->player->get($player->getName())["JobID"]);
 		if($job !== false){
 			$player_data = $this->player->get($player->getName());
@@ -187,7 +186,6 @@ class Main extends PluginBase implements Listener{
 			//throw $th;
 		}
 		if ($event->isCancelled()){return;}
-		if ($player->isCreative()){return;}
 		$job = $this->jobs->get($this->player->get($player->getName())["JobID"]);
 		if($job !== false){
 			$player_data = $this->player->get($player->getName());
