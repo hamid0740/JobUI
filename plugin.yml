@@ -1,6 +1,6 @@
 name: JobUI
 version: 2.4.0
-api: 3.9.0
+api: 4.6.2
 main: hamid0740\JobUI\Main
 author: hamid0740
 website: https://github.com/hamid0740/JobUI
